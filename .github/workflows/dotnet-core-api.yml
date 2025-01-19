@@ -1,4 +1,4 @@
-name: Dotnet core-api
+name: Dotnet core-api build
 
 on:
   push:
