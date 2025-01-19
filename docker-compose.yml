@@ -19,5 +19,14 @@ services:
     ports:
       - '4200:4200'
 
+  core-api:
+    build:
+      context: .
+      dockerfile: ./core-api/Dockerfile.dev
+    ports:
+      - '7054:7054'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${CORE_API_ENV}
+
 volumes:
   postgres_data:
