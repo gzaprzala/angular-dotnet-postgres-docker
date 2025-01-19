@@ -28,5 +28,14 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=${CORE_API_ENV}
 
+  auth-api:
+    build:
+      context: .
+      dockerfile: ./auth-api/Dockerfile.dev
+    ports:
+      - '7055:7055'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${AUTH_API_ENV}
+
 volumes:
   postgres_data:
