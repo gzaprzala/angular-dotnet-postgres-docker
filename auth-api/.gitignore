@@ -1,0 +1,68 @@
+# .NET
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+
+# .NET user-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET
+appsettings.json
+appsettings.Development.json
+wwwroot/
+
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Visual Studio
+.vs/
+*.pidb
+*.svclog
+
+# Visual Studio cache files
+*.[Cc]ache
+!?*.[Cc]ache/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+# Visual Studio test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Docker
+*.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+.docker/
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+*.temp
+~$*
