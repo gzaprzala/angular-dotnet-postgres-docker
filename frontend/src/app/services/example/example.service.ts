@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { ExampleData } from '../../interfaces/exampleData.interface';
 import { Observable } from 'rxjs';
+import { API } from '../../enums/api.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class ExampleService {
 
   public getExampleData(id: number): Observable<ExampleData> {
     return this.httpClient.get<ExampleData>(
-      `http://localhost:7054/Api/Example/GetExampleData/${id}`
+      `${API.CoreApi}/Example/GetExampleData/${id}`
     );
   }
 }
