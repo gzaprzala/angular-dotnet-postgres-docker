@@ -2,10 +2,10 @@
 
 Rename .env.template.dev to .env and fill with correct data
 
-Use command to build docker container
+Use command to build dev docker container
 
 ```shell
-docker compose up --build
+sudo docker compose -f docker-compose.dev.yml up --build
 ```
 
 ## Swagger links
@@ -15,4 +15,15 @@ auth-api: http://localhost:7055/swagger/index.html
 
 ## App frontend available via
 http://localhost:4200/
+
+
+# How to build on server
+
+Copy/clone project files to desired directory on server
+
+Use command to build prod docker container
+
+```shell
+sudo docker compose -f docker-compose.prod.yml up --build
+```
 
