@@ -16,3 +16,4 @@ services:
       dockerfile: ./frontend/Dockerfile.prod
     ports:
       - '80:80'
+      - '443:443'
