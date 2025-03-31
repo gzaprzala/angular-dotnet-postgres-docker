@@ -9,6 +9,14 @@ AuthApi = 'http://localhost:7055/Auth',
 CoreApi = 'http://localhost:7054/Api',
 ```
 
+In .env set correct frontend path and variables:
+
+```shell
+CORE_API_ENV=Development
+AUTH_API_ENV=Development
+FRONTEND_URL=http://localhost:4200
+```
+
 Use command to build dev docker container
 
 ```shell
