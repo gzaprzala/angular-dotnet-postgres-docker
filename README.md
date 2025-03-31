@@ -61,5 +61,5 @@ sudo docker exec -it <docker-container-id> certbot --nginx -d example-domain.com
 Ssl certificates for testing purposes
 
 ```shell
-sudo docker exec -it ac9a certbot --nginx -d example-domain.com -d www.example-domain.com --server https://acme-staging-v02.api.letsencrypt.org/directory
+sudo docker exec -it <docker-container-id> certbot --nginx -d example-domain.com -d www.example-domain.com --server https://acme-staging-v02.api.letsencrypt.org/directory
 ```
