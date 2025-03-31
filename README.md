@@ -93,3 +93,33 @@ Ssl certificates for testing purposes
 ```shell
 sudo docker exec -it <docker-container-id> certbot --nginx -d example-domain.com -d www.example-domain.com --server https://acme-staging-v02.api.letsencrypt.org/directory
 ```
+
+# How to replace and update frontend files without stopping nginx
+
+Copy/clone project files to desired directory on server
+
+Change all example-domain.com appearances to your domain name
+
+Build the Angular App in a Temporary Container:
+
+```shell
+sudo docker build --target build -t angular-build-temp -f frontend/Dockerfile.prod .
+```
+
+Create a Temporary Container to Extract the Build
+
+```shell
+sudo docker create --name temp angular-build-temp
+```
+
+Copy the Angular Build Files to the Host Machine
+
+```shell
+sudo docker cp temp:/app/dist/frontend/browser ./frontend-dist
+```
+
+Copy the Files to the Running Nginx Container
+
+```shell
+sudo docker cp ./frontend-dist/. angular-dotnet-postgres-docker-frontend-1:/usr/share/nginx/html
+```
