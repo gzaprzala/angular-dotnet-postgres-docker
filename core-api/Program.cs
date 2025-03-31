@@ -2,6 +2,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 var frontendUrl = Environment.GetEnvironmentVariable("FRONTEND_URL");
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(7054, listenOptions =>
+    {
+        listenOptions.UseHttps();
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
