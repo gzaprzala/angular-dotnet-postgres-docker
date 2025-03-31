@@ -10,4 +10,4 @@ RUN dotnet restore
 
 EXPOSE 7055
 
-CMD ["dotnet", "run", "--urls", "http://host.docker.internal:7055"]
+CMD ["dotnet", "run", "--urls", "https://host.docker.internal:7055"]

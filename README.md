@@ -17,6 +17,24 @@ AUTH_API_ENV=Development
 FRONTEND_URL=http://localhost:4200
 ```
 
+Create directory certs in main repo directory and generate self-signed certificate for APIs:
+
+```shell
+dotnet dev-certs https -ep certs/cert.pfx -p <password>
+```
+
+Add password to .env file:
+
+```shell
+CERT_PASSWORD=
+```
+
+Trust certs (for dev)
+
+```shell
+dotnet dev-certs https --trust
+```
+
 Use command to build dev docker container
 
 ```shell
@@ -44,6 +62,18 @@ In api.enum.ts set correct paths:
 ```shell
 AuthApi = 'https://example-domain.com/Auth',
 CoreApi = 'https://example-domain.com/Api',
+```
+
+Create directory certs in main repo directory and generate self-signed certificate for APIs:
+
+```shell
+dotnet dev-certs https -ep certs/cert.pfx -p <password>
+```
+
+Add password to .env file:
+
+```shell
+CERT_PASSWORD=
 ```
 
 Use command to build prod docker container

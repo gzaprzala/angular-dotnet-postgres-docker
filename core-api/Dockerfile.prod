@@ -17,7 +17,8 @@ WORKDIR /app
 
 COPY --from=build /app ./
 
-ENV ASPNETCORE_URLS=http://+:7054
+ENV ASPNETCORE_URLS="https://+:7054" \
+    ASPNETCORE_HTTPS_PORT=7054
 
 EXPOSE 7054
 
