@@ -17,3 +17,23 @@ services:
     ports:
       - '80:80'
       - '443:443'
+
+  core-api:
+    build:
+      context: .
+      dockerfile: ./core-api/Dockerfile.prod
+    ports:
+      - '7054:7054'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${CORE_API_ENV}
+      - FRONTEND_URL=${FRONTEND_URL}
+
+  auth-api:
+    build:
+      context: .
+      dockerfile: ./auth-api/Dockerfile.prod
+    ports:
+      - '7055:7055'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${AUTH_API_ENV}
+      - FRONTEND_URL=${FRONTEND_URL}

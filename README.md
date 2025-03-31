@@ -2,6 +2,21 @@
 
 Rename .env.template.dev to .env and fill with correct data
 
+In api.enum.ts set correct paths:
+
+```shell
+AuthApi = 'http://localhost:7055/Auth',
+CoreApi = 'http://localhost:7054/Api',
+```
+
+In .env set correct frontend path and variables:
+
+```shell
+CORE_API_ENV=Development
+AUTH_API_ENV=Development
+FRONTEND_URL=http://localhost:4200
+```
+
 Use command to build dev docker container
 
 ```shell
@@ -22,7 +37,14 @@ http://localhost:4200/
 
 Copy/clone project files to desired directory on server
 
-Change example-domain.com and www.example-domain.com in nginx.conf to your domain name
+Change all example-domain.com appearances to your domain name
+
+In api.enum.ts set correct paths:
+
+```shell
+AuthApi = 'https://example-domain.com/Auth',
+CoreApi = 'https://example-domain.com/Api',
+```
 
 Use command to build prod docker container
 
@@ -34,4 +56,10 @@ Use command to add ssl certificates
 
 ```shell
 sudo docker exec -it <docker-container-id> certbot --nginx -d example-domain.com -d www.example-domain.com
+```
+
+Ssl certificates for testing purposes
+
+```shell
+sudo docker exec -it <docker-container-id> certbot --nginx -d example-domain.com -d www.example-domain.com --server https://acme-staging-v02.api.letsencrypt.org/directory
 ```
