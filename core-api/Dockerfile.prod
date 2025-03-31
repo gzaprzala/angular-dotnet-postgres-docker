@@ -1,0 +1,24 @@
+# Build Stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+WORKDIR /src/core-api
+
+COPY core-api/*.csproj ./
+
+RUN dotnet restore
+
+COPY core-api/ ./
+
+RUN dotnet publish -c Release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+
+WORKDIR /app
+
+COPY --from=build /app ./
+
+ENV ASPNETCORE_URLS=http://+:7054
+
+EXPOSE 7054
+
+ENTRYPOINT ["dotnet", "core-api.dll"]
