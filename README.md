@@ -5,7 +5,6 @@ Rename .env.template.dev to .env and fill with correct data
 In api.enum.ts set correct paths:
 
 ```shell
-AuthApi = 'http://localhost:7055/Auth',
 CoreApi = 'http://localhost:7054/Api',
 ```
 
@@ -13,11 +12,10 @@ In .env set correct frontend path and variables:
 
 ```shell
 CORE_API_ENV=Development
-AUTH_API_ENV=Development
 FRONTEND_URL=http://localhost:4200
 ```
 
-Create directory certs in main repo directory and generate self-signed certificate for APIs:
+Create directory certs in main repo directory and generate self-signed certificate for API:
 
 ```shell
 dotnet dev-certs https -ep certs/cert.pfx -p <password>
@@ -45,8 +43,6 @@ sudo docker compose -f docker-compose.dev.yml up --build
 
 core-api: http://localhost:7054/swagger/index.html
 
-auth-api: http://localhost:7055/swagger/index.html
-
 ## App frontend available via
 
 http://localhost:4200/
@@ -60,11 +56,10 @@ Change all example-domain.com appearances to your domain name
 In api.enum.ts set correct paths:
 
 ```shell
-AuthApi = 'https://example-domain.com/Auth',
 CoreApi = 'https://example-domain.com/Api',
 ```
 
-Create directory certs in main repo directory and generate self-signed certificate for APIs:
+Create directory certs in main repo directory and generate self-signed certificate for API:
 
 ```shell
 dotnet dev-certs https -ep certs/cert.pfx -p <password>

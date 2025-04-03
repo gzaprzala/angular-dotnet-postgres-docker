@@ -30,17 +30,3 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/cert.pfx
     volumes:
       - ./certs:/https:ro
-
-  auth-api:
-    build:
-      context: .
-      dockerfile: ./auth-api/Dockerfile.dev
-    ports:
-      - '7055:7055'
-    environment:
-      - ASPNETCORE_ENVIRONMENT=${AUTH_API_ENV}
-      - FRONTEND_URL=${FRONTEND_URL}
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=${CERT_PASSWORD}
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/cert.pfx
-    volumes:
-      - ./certs:/https:ro
