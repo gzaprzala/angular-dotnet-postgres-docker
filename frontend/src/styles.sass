@@ -1,4 +1,5 @@
 @use './colors' as colors
+@use 'ngx-toastr/toastr'
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap')
 
 *
@@ -10,3 +11,16 @@
 
 html
   background: colors.$bg-color
+
+.toast-new
+  position: relative
+  overflow: hidden
+  margin: 0 0 6px
+  padding: 15px 15px 15px 50px
+  width: 300px
+  border-radius: 8px
+  background-position: 15px center
+  background-repeat: no-repeat
+  background-size: 24px
+  box-shadow: 0 0 0 !important
+  color: #FFFFFF
