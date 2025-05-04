@@ -5,7 +5,7 @@ Rename .env.template.dev to .env and fill with correct data
 In api.enum.ts set correct paths:
 
 ```shell
-CoreApi = 'http://localhost:7054/Api',
+CoreApi = 'https://localhost:7054/Api',
 ```
 
 In .env set correct frontend path and variables:
@@ -41,7 +41,7 @@ sudo docker compose -f docker-compose.dev.yml up --build
 
 ## Swagger links
 
-core-api: http://localhost:7054/swagger/index.html
+core-api: https://localhost:7054/swagger/index.html
 
 ## App frontend available via
 
