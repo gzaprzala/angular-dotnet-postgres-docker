@@ -12,7 +12,7 @@ builder.Services.AddRateLimiter(options =>
             partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous",
             factory: _ => new FixedWindowRateLimiterOptions
             {
-                PermitLimit = 45,
+                PermitLimit = 90,
                 Window = TimeSpan.FromMinutes(1)
             }));
 });
