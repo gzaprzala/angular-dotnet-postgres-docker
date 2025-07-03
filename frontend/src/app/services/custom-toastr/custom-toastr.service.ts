@@ -14,19 +14,19 @@ export class CustomToastrService {
     progressBar: true,
   };
 
-  public success(message: string, title: string = 'Success'): void {
+  public success(message: string, title = 'Success'): void {
     this.toastrService.success(message, title, this.toastSettings);
   }
 
-  public error(message: string, title: string = 'Error'): void {
+  public error(message: string, title = 'Error'): void {
     this.toastrService.error(message, title, this.toastSettings);
   }
 
-  public warning(message: string, title: string = 'Warning'): void {
+  public warning(message: string, title = 'Warning'): void {
     this.toastrService.warning(message, title, this.toastSettings);
   }
 
-  public info(message: string, title: string = 'Info'): void {
+  public info(message: string, title = 'Info'): void {
     this.toastrService.info(message, title, this.toastSettings);
   }
 }

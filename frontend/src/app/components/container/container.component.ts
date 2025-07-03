@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-container',
   imports: [],
   templateUrl: './container.component.html',
-  styleUrl: './container.component.sass'
+  styleUrl: './container.component.sass',
 })
-export class ContainerComponent {
-
-}
+export class ContainerComponent {}
